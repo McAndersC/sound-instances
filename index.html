@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="waveform"></div>
+    <div id="waveform1"></div>
+
+    <script defer>
+        const waveform = WaveSurfer.create({
+            container: '#waveform',
+            waveColor: '#4F4A85',
+            progressColor: '#383351',
+            url: '/files/file_example_MP3_5MG.mp3',
+        })
+
+        const player = document.querySelector('#waveform')
+        player.addEventListener('click', function (e) {
+            e.preventDefault()
+            waveform.playPause()
+        })
+
+        const waveform1 = WaveSurfer.create({
+            container: '#waveform1',
+            waveColor: '#4F4A85',
+            progressColor: '#383351',
+            url: '/files/file_example_MP3_5MG.mp3',
+        })
+
+        const player1 = document.querySelector('#waveform1')
+        player1.addEventListener('click', function (e) {
+            e.preventDefault()
+            waveform1.playPause()
+        })
+    </script>
+</body>
+</html>
